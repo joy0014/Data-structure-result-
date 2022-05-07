@@ -529,71 +529,48 @@ let totalGrade=[];
      let Ict=data.Ict;
      let subject=[Bangla,English,Math,SocialWork,Religion,Ict]
      let result;
+     let gpa ;
      let aGrade=[];
+     let aGpa=[];
 
 
 
-// Create Grade Array
+// Create Grade Array + Gpa array
 
      for ( i=0;i<=5;i++){
           if(subject[i] < 33){
             result= "F"
+            gpa= 0
           }
           else if(subject[i] >= 33 && subject[i] < 40){
             result= "D"
+            gpa= 1
           }
           else if(subject[i] >= 40 && subject[i] <50 ){
             result= "C"
+            gpa= 2
           }
           else if(subject[i] >= 50 && subject[i] < 60){
              result= "B"
+             gpa= 3
           }
           else if(subject[i]>=60 && subject[i]<70){
             result= "A-"
+            gpa= 3.5
           }
           else if(subject[i]>=70 && subject[i]<80){
             result= "A"
+            gpa= 4
           }
           else if(subject[i]>=80 && subject[i]<=100){
              result= "A+"
+             gpa= 5
           }
       aGrade.push(result)
+      aGpa.push(gpa)
      }
       gradeArray.push(aGrade)
-
-
-// Create  gpa  Araay  
-
-
-      let aGpa=[];
-   for(i=0;i<=5;i++){
-      if(aGrade[i] == "A+" ){
-            gpa= 5
-        }
-      else if( aGrade[i] == "A"){
-         gpa = 4
-         }
-      else if(aGrade[i] == "A-"){
-         gpa = 3.5
-         }
-      else if(aGrade[i] == 'B'){
-         gpa = 3
-      }
-      else if(aGrade[i]== 'C'){
-         gpa = 2
-         }
-      else if(aGrade[i]=='D'){
-         gpa = 1
-         }
-      else if(aGrade[i]=='F'){
-            gpa = 0
-      }
-         aGpa.push(gpa)
-   }
-
-   gpaArray.push(aGpa)
-
-
+      gpaArray.push(aGpa)
 
 
 // Create Cgpa Array 
@@ -651,7 +628,7 @@ let totalGrade=[];
 
 
 
-   for(i=0;i<30;i++){
+   for(i=0;i<students.length;i++){
      console.log(`
 
 
